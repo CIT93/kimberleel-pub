@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="main.js" defer></script>
+    <title>Week3 - Carbon Footprint Household</title>
+    <style>
+        body {
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        input,
+        select {
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h1>Your Carbon Footprint</h1>
+        <fieldset><br>
+            <legend>Carbon Footprint Calculator</legend>
+            <label for="numberInHousehold">Count household members: </label>
+            <input type="number" id="numberInHousehold" min="1" oninput="calcFootprints()"><br><br>
+
+            <label for=" houseSize">Select your house size: </label>
+            <select name="houseSize" id="houseSize" oninput="calcFootprints()">
+                <option value="">Choose</option>
+                <option value="apartment">Apartment</option>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select><br>
+            <h2>Your Carbon Footprint is: <span id="results"></span></h2>
+            <button type="reset" onclick="resetForm()">Reset</button>
+        </fieldset>
+    </form>
+</body>
+</html>
