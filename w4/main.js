@@ -7,8 +7,8 @@ function calcHouseSizePts(size) {
   } else if (size === "medium") {
     houseSizePts = 7;
   } else if (size === "small") {
-    hosueSizePts = 4;
-  } else if (size === "apt") {
+    houseSizePts = 4;
+  } else if (size === "apartment") {
     houseSizePts = 2;
   }
   return houseSizePts;
@@ -17,18 +17,8 @@ function calcHouseSizePts(size) {
 function calchouseholdPoints(numberInHousehold) {
   let householdPoints = 0;
 
-  if (numberInHousehold === 1) {
-    householdPoints = 14;
-  } else if (numberInHousehold === 2) {
-    householdPoints = 12;
-  } else if (numberInHousehold === 3) {
-    householdPoints = 10;
-  } else if (numberInHousehold === 4) {
-    householdPoints = 8;
-  } else if (numberInHousehold === 5) {
-    householdPoints = 6;
-  } else if (numberInHousehold === 6) {
-    householdPoints = 4;
+  if (numberInHousehold <= 6) {
+    householdPoints = 16 - numberInHousehold * 2;
   } else {
     householdPoints = 2;
   }
@@ -48,8 +38,16 @@ function start(householdMembers, houseSize) {
   ]);
 }
 
-function displayOutput() {}
-start(1, "apt");
+function displayOutput() {
+  for (arr of cfpData) {
+    const output = document.getElementById("output");
+    const newP = document.createElement("p");
+    newP.textContent = `A household size of ${arr[0]} adds ${arr[2]} points to your Carbon Footprint. If you live in a(n) ${arr[1]} size home, add ${arr[3]} points.  Your total Carbon Footprint, thus far, is ${arr[4]} points.`;
+    output.appendChild(newP);
+  }
+}
+
+start(1, "apartment");
 start(2, "small");
 start(3, "medium");
 start(4, "large");
