@@ -23,21 +23,6 @@ function calchouseholdPoints(numberInHousehold) {
   return householdPoints;
 }
 
-function displayObj(obj) {
-  console.log(obj);
-  const output = document.getElementById("output");
-  const newH2 = document.createElement("h2");
-  newH2.textContent = `Your Carbon Footprint is ${obj.total}`;
-  const newP = document.createElement("p");
-  newP.textContent = "How your Carbon Footprint is calculated:";
-  const newH3 = document.createElement("h3");
-  newH3.textContent = `A household size of ${obj.members} adds ${obj.householdPts} points to your Carbon Footprint.`;
-  newH3.textContent += ` Then add ${obj.houseSizePts} points if your live in a(n) ${obj.size} home.`;
-  output.appendChild(newH2);
-  output.appendChild(newP);
-  output.appendChild(newH3);
-}
-
 function start(householdMembers, houseSize) {
   const householdPts = calchouseholdPoints(householdMembers);
   const houseSizePts = calcHouseSizePts(houseSize);
@@ -51,21 +36,30 @@ function start(householdMembers, houseSize) {
   });
 }
 
-function display() {
-  for (obj of cfpData) {
-    console.log(obj);
-    const output = document.getElementById("output");
-    const newH2 = document.createElement("h2");
-    newH2.textContent = `Your Carbon Footprint is ${obj.total}`;
-    output.appendChild(newH2);
+function allCombinations() {
+  const members = [1, 2, 3, 4, 5, 6, 7];
+  const size = ["apartment", "small", "medium", "large"];
+  for (let i = 0; i < members.length; i++) {
+    for (let j = 0; j < size.length; j++) {
+      start(members[i], size[j]);
+    }
   }
 }
 
-start(1, "apartment");
-start(2, "small");
-start(3, "medium");
-start(4, "large");
-start(5, "large");
-start(6, "large");
-start(7, "large");
+function display() {
+  const newH1 = document.createElement("h1");
+  newH1.textContent = "All Possible Combinations";
+  output.appendChild(newH1);
+  for (obj of cfpData) {
+    const newH3 = document.createElement("h3");
+    newH3.textContent = `If your family size is ${obj.members} (${obj.householdPts} pts.) and live in a ${obj.size} house (${obj.houseSizePts} pts.), your total Carbon Footprint would be ${obj.total} pts.`;
+    output.appendChild(newH3);
+    output.style.width = "70%";
+    output.style.margin = "0 auto";
+    newH3.style.border = "1px dashed gray";
+    newH3.style.padding = "15px";
+  }
+}
+
+allCombinations();
 display();
