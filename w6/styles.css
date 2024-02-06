@@ -1,0 +1,30 @@
+html {
+  font-size: 24px;
+}
+
+body {
+  background-color: #333;
+  color: whitesmoke;
+}
+
+input,
+select,
+button {
+  padding: 5px 10px;
+}
+
+button {
+  background-color: gray;
+  color: yellow;
+  border-radius: 5px;
+  padding: 5px 30px;
+}
+
+button:hover {
+  background-color: yellow;
+  color: gray;
+}
+
+input:out-of-range {
+  background-color: lightcoral;
+}
