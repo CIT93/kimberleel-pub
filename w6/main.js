@@ -36,7 +36,7 @@ function start(householdMembers, houseSize) {
     fname: fname,
     lname: lname,
     members: householdMembers,
-    size: houseSize,
+    houseSize: houseSize,
     householdPts: householdPts,
     houseSizePts: houseSizePts,
     total: total,
@@ -51,7 +51,7 @@ function displayOutput() {
     OUTPUT.appendChild(newH1);
 
     const newH3 = document.createElement("h3");
-    newH3.textContent = `A family size of ${obj.members} adds ${obj.householdPts} pts to your Carbon Footprint. Living in a(n) ${obj.size} home adds ${obj.houseSizePts} pts, bringing your total Carbon Footprint to ${obj.total} pts.`;
+    newH3.textContent = `A family size of ${obj.members} adds ${obj.householdPts} pts to your Carbon Footprint. Living in a(n) ${obj.houseSize} home adds ${obj.houseSizePts} pts, bringing your total Carbon Footprint to ${obj.total} pts.`;
     OUTPUT.appendChild(newH3);
     newH3.style.border = "1px dashed gray";
     newH3.style.padding = "15px";

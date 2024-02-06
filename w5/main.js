@@ -1,4 +1,5 @@
 const cfpData = [];
+
 function calcHouseSizePts(size) {
   let houseSizePts = 0;
   if (size === "large") {
