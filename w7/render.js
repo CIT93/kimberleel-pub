@@ -2,25 +2,27 @@
 const TBL = document.getElementById("tab-data");
 
 function renderTblHeading() {
-  const table = document.createElement("table");
-  const thead = document.createElement("thead");
-  const tr = document.createElement("tr");
-  const headingTxtArr = [
-    "Name",
-    "No. in Home",
-    "House Size",
-    "Carbon Footprint",
-    "Action",
-  ];
-  headingTxtArr.forEach(function (text) {
-    const th = document.createElement("th");
-    th.textContent = text;
-    tr.appendChild(th);
-    console.log(tr);
-  });
-  thead.appendChild(tr);
-  table.appendChild(thead);
+  let table = TBL.querySelector("table");
 
+  if (!table) {
+    table = document.createElement("table");
+    const thead = document.createElement("thead");
+    const tr = document.createElement("tr");
+    const headingTxtArr = [
+      "Name",
+      "No. in Home",
+      "House Size",
+      "Carbon Footprint",
+      "Action",
+    ];
+    headingTxtArr.forEach(function (text) {
+      const th = document.createElement("th");
+      th.textContent = text;
+      tr.appendChild(th);
+    });
+    thead.appendChild(tr);
+    table.appendChild(thead);
+  }
   return table;
 }
 
