@@ -1,0 +1,47 @@
+html {
+  font-size: 24px;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #333;
+  color: whitesmoke;
+}
+
+input,
+select,
+button {
+  padding: 5px 10px;
+}
+
+button {
+  background-color: gray;
+  color: yellow;
+  border-radius: 5px;
+  padding: 5px 30px;
+}
+
+button:hover {
+  background-color: black;
+  color: yellow;
+}
+
+input:out-of-range {
+  background-color: lightcoral;
+}
+
+table {
+  width: 80%;
+  margin: 25px auto;
+}
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #999;
+}
+
+tr:hover {
+  background-color: yellow;
+  color: #333;
+}
