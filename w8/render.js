@@ -1,4 +1,5 @@
 const TBL = document.getElementById("tab-data");
+const FORM = document.getElementById("form");
 
 //function to render headings for the table
 function renderTblHeading() {
@@ -26,7 +27,7 @@ function renderTblHeading() {
 }
 
 //function to render the buttons
-function renderButtons(index, data) {
+function renderButtons(obj, index, data) {
   const td = document.createElement("td");
   const btnEdit = document.createElement("button");
   btnEdit.textContent = "Edit";
@@ -41,25 +42,13 @@ function renderButtons(index, data) {
   });
 
   btnEdit.addEventListener("click", function (e) {
-    const inputData = {
-      fname: document.getElementById("fname"),
-      lname: document.getElementById("lname"),
-      householdMembers: document.getElementById("householdMembers"),
-      houseSize: document.getElementById("houseSize"),
-    };
-    const trData = data[index];
+    FORM[1].value = obj.fname;
+    FORM[2].value = obj.lname;
+    FORM[3].value = obj.householdMembers;
+    FORM[4].value = obj.houseSize;
 
-    inputData.fname.value = trData.fname;
-    inputData.lname.value = trData.lname;
-    inputData.householdMembers.value = trData.householdMembers;
-    inputData.houseSize.value = trData.houseSize;
-
-    if (data.length === 1) {
-      TBL.innerHTML = "";
-    } else {
-      data.splice(index, 1);
-      renderTbl(data);
-    }
+    data.splice(index, 1);
+    renderTbl(data);
   });
   return td;
 }
@@ -76,7 +65,7 @@ function createRow(data) {
         tr.appendChild(td);
       }
     }
-    const td = renderButtons(index, data);
+    const td = renderButtons(obj, index, data);
     tr.appendChild(td);
     tbody.appendChild(tr);
   });
@@ -85,11 +74,13 @@ function createRow(data) {
 }
 
 function renderTbl(data) {
-  const table = renderTblHeading();
-  const tbody = createRow(data);
-  table.appendChild(tbody);
   TBL.innerHTML = "";
-  TBL.appendChild(table);
+  if (data.length !== 0) {
+    const table = renderTblHeading();
+    const tbody = createRow(data);
+    table.appendChild(tbody);
+    TBL.appendChild(table);
+  }
 }
 
 export { renderTbl };
