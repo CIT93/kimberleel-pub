@@ -31,3 +31,5 @@ FORM.addEventListener("submit", function (e) {
   renderTbl(cfpData);
   FORM.reset();
 });
+
+renderTbl(cfpData);

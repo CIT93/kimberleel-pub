@@ -44,8 +44,8 @@ function renderButtons(obj, index, data) {
   btnEdit.addEventListener("click", function (e) {
     FORM[1].value = obj.fname;
     FORM[2].value = obj.lname;
-    FORM[3].value = obj.householdMembers;
-    FORM[4].value = obj.houseSize;
+    FORM[3].value = obj.members;
+    FORM[4].value = obj.size;
 
     data.splice(index, 1);
     renderTbl(data);
