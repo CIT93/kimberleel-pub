@@ -4,7 +4,7 @@ import { FORM, FNAME, LNAME, SUBMIT } from "./global.js";
 import { saveLS, cfpData } from "./storage.js";
 
 //function to create array with cfp data
-const start = function (householdMembers, houseSize, fname, lname) {
+const start = (householdMembers, houseSize, fname, lname) => {
   const householdPts = calchouseholdPoints(householdMembers);
   const houseSizePts = calcHouseSizePts(houseSize);
   const total = householdPts + houseSizePts;

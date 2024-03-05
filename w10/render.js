@@ -2,7 +2,7 @@ import { FORM, TBL } from "./global.js";
 import { saveLS } from "./storage.js";
 
 //function to render headings for the table
-const renderTblHeading = function () {
+const renderTblHeading = () => {
   let table = TBL.querySelector("table");
 
   table = document.createElement("table");
@@ -27,7 +27,7 @@ const renderTblHeading = function () {
 };
 
 //function to render the buttons
-const renderButtons = function (obj, index, data) {
+const renderButtons = (obj, index, data) => {
   const td = document.createElement("td");
   const btnEdit = document.createElement("button");
   btnEdit.textContent = "Edit";
@@ -52,14 +52,14 @@ const renderButtons = function (obj, index, data) {
   return td;
 };
 
-const onUpdate = function (data, index) {
+const onUpdate = (data, index) => {
   data.splice(index, 1);
   saveLS(data);
   renderTbl(data);
 };
 
 //funtion to create the rows of the
-const createRow = function (data) {
+const createRow = (data) => {
   const tbody = document.createElement("tbody");
   data.forEach(function (obj, index) {
     const tr = document.createElement("tr");
@@ -78,7 +78,7 @@ const createRow = function (data) {
   return tbody;
 };
 
-const renderTbl = function (data) {
+const renderTbl = (data) => {
   TBL.innerHTML = "";
   if (data.length !== 0) {
     const table = renderTblHeading();
