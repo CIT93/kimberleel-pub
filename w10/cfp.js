@@ -13,7 +13,7 @@ const calcHouseSizePts = (size = "apartment") => {
   return houseSizePts;
 };
 
-// function to calculate formula based on number of memebers in home
+//function to calculate formula based on number of memebers in home
 const calchouseholdPoints = (numberInHousehold = 1) => {
   let householdPoints = 0;
   if (numberInHousehold <= 6) {
