@@ -1,5 +1,5 @@
 //function to assign points per size of home
-const calcHouseSizePts = (size) => {
+const calcHouseSizePts = (size = "apartment") => {
   let houseSizePts = 0;
   if (size === "large") {
     houseSizePts = 12;
@@ -14,7 +14,7 @@ const calcHouseSizePts = (size) => {
 };
 
 // function to calculate formula based on number of memebers in home
-const calchouseholdPoints = (numberInHousehold) => {
+const calchouseholdPoints = (numberInHousehold = 1) => {
   let householdPoints = 0;
   if (numberInHousehold <= 6) {
     householdPoints = 16 - numberInHousehold * 2;
