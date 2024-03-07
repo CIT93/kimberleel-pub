@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <script type="module" src="main.js"></script>
+    <title>Carbon Footprint w11 - public</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <form id="form">
+        <h1>Your Carbon Footprint</h1>
+        <div id="error"></div>
+        <fieldset><br>
+            <legend>Carbon Footprint Calculator</legend>
+            <div>
+                <label for="fname">First Name</label>
+                <input id="firstName" type="text" name="fname" maxlength="20">
+                <span id="firstNameError" class="error"></span>
+            </div>
+            <div>
+                <label for="lname">Last Name</label>
+                <input id="lastName" type="text" name="lname" maxlength="20">
+                <span id="lastNameError" class="error"></span>
+            </div>
+            <div>
+                <label for="houseMembers">Count the members in your household: </label>
+                <input id="houseMembers" name="houseMembers" type="number" required min="1" max="6">
+            </div>
+            <div>
+                <label for="houseSize">Select your house size: </label>
+                <select id="houseSize" name="houseSize" required>
+                    <option value="">---Choose Size Of Home---</option>
+                    <option value="apartment">Apartment</option>
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                </select>
+            </div>
+            <div>
+                <label for="foodChoice">Evaluate you foor choices: </label>
+                <select id="foodChoice" name="foodChoice" required>
+                    <option value="">---Choose---</option>
+                    <option value="meat daily">Meat on a daily basis</option>
+                    <option value="meat weekly">Meat a few times per week</option>
+                    <option value="vegetarian">I am a vegetarian</option>
+                    <option value="vegan">I am a vegan or only eat wild meat</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button>
+            <span id="submitError" class="error"></span>
+        </fieldset>
+
+    </form>
+    <div id="output"></div>
+    <div id="tab-data"></div>
+</body>
+</html>

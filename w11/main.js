@@ -1,23 +1,7 @@
 import { renderTbl } from "./render.js";
-import { calcHouseSizePts, calchouseholdPoints } from "./cfp.js";
 import { FORM, FNAME, LNAME, SUBMIT } from "./global.js";
 import { saveLS, cfpData } from "./storage.js";
-
-//function to create array with cfp data
-const start = (householdMembers, houseSize, fname, lname) => {
-  const householdPts = calchouseholdPoints(householdMembers);
-  const houseSizePts = calcHouseSizePts(houseSize);
-  const total = householdPts + houseSizePts;
-  cfpData.push({
-    fname: fname,
-    lname: lname,
-    members: householdMembers,
-    size: houseSize,
-    householdPts: householdPts,
-    houseSizePts: houseSizePts,
-    total: total,
-  });
-};
+import { FP } from "./fp.js";
 
 // Function to validate a single field
 const validateField = (event) => {
@@ -43,12 +27,15 @@ FORM.addEventListener("submit", (e) => {
   e.preventDefault();
   if (FNAME.value !== "" && LNAME.value !== "") {
     SUBMIT.textContent = "";
-    start(
-      parseInt(FORM.householdMembers.value),
-      FORM.houseSize.value,
+
+    const fpObj = new FP(
       FNAME.value,
-      LNAME.value
+      LNAME.value,
+      parseInt(FORM.houseMembers.value),
+      FORM.houseSize.value,
+      FORM.foodChoice.value
     );
+    cfpData.push(fpObj);
     saveLS(cfpData);
     renderTbl(cfpData);
 
