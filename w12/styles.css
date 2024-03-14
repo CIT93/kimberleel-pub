@@ -11,20 +11,18 @@ body {
   );
 }
 #stop-display {
-  margin-top: 15px;
   color: red;
 }
 .form-group {
   display: flex;
   flex-direction: column;
-  padding: 10px 0;
-  font-size: 1em;
+  padding: 5px 0;
+  font-size: 0.8em;
 }
 select,
 input {
-  font-size: 0.8em;
-  padding: 15px;
-  margin-bottom: 15px;
+  font-size: 0.6em;
+  padding: 10px;
 }
 
 #stop-workout {
@@ -32,23 +30,20 @@ input {
 }
 
 .container {
-  font-size: 1.4em;
-  margin-top: 4em;
+  margin-top: 3em;
   min-width: 600px;
   background: white;
   width: 50%;
   margin-right: auto;
   margin-left: auto;
-  padding: 25px;
+  padding: 20px;
   border-radius: 25px;
 }
 legend {
-  font-size: 1.5em;
+  font-size: 1em;
   padding: 10px;
 }
 button {
-  letter-spacing: 0.1em;
-  margin: 5%;
   padding: 10px 25px;
   color: white;
   background-color: green;
