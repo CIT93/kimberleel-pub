@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+    <title>w12 Code Challege</title>
+</head>
+<body>
+    <div class="container">
+        <form id="form">
+            <fieldset>
+                <legend>Sprint Workout!</legend>
+                <div class="form-group">
+                    <label for="exercises">Choose an Exercise: </label>
+                    <select id="exercises" name="exercises required">
+                        <option value="pullups">Pull-ups</option>
+                        <option value="pushups">Push-ups</option>
+                        <option value="crunches">Crunches</option>
+                        <option value="burpees">Burpees</option>
+                        <option value="burpees">Lunges</option>
+                    </select>
+                </div>
+                <div class="form-group" <label for="target">Target Repetitions: </label>
+                    <input type="number" name="target" id="target" required>
+                </div>
+                <div class="form-group">
+                    <label for="duration">Select Duration: </label>
+                    <output id="durationDisplay">60 secs</output>
+                    <input type="range" id="duration" name="duration" min="10" max="120" step="10">
+
+                </div>
+
+                <button type="submit">Start Workout</button>
+            </fieldset>
+        </form>
+        <div>
+            <h2>Get Ready!</h2>
+            <h2 id="start-display"></h2>
+            <h2 id="stop-display"></h2>
+        </div>
+    </div>
+</body>
+</html>

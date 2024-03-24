@@ -1,0 +1,56 @@
+body {
+  font-family: sans-serif;
+  box-sizing: border-box;
+  height: 100vh;
+  background: rgb(23, 23, 24);
+  background: linear-gradient(
+    117deg,
+    rgba(23, 23, 24, 1) 0%,
+    rgba(10, 95, 231, 1) 51%,
+    rgba(71, 141, 241, 1) 100%
+  );
+}
+#stop-display {
+  color: red;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  font-size: 1.2rem;
+}
+select,
+input {
+  font-size: 1rem;
+  padding: 10px;
+}
+
+#stop-workout {
+  color: red;
+}
+
+.container {
+  margin-top: 3em;
+  max-width: 400px;
+  background: white;
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 20px;
+  border-radius: 25px;
+}
+legend {
+  font-size: 1.5em;
+  padding: 10px;
+}
+button {
+  padding: 10px 25px;
+  color: white;
+  background-color: green;
+  border-radius: 10px;
+}
+
+button:hover {
+  color: darkblue;
+  background-color: white;
+}
